@@ -72,7 +72,7 @@ defmodule ExAdmin.Mixfile do
       {:exactor, "~> 2.2.0"},
       {:ex_doc, "~> 0.20.2", only: :dev},
       {:earmark, "~> 1.3.2", only: :dev},
-      {:ex_queb, path: "../ex_queb"},
+      {:ex_queb, git: "https://github.com/tomjschuster/ex_queb", branch: "ecto_3"},
       {:excoveralls, "~> 0.5", only: :test},
       {:gettext, "~> 0.11"},
       {:hound, "~> 1.0", only: :test},
