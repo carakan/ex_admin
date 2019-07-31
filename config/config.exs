@@ -35,8 +35,9 @@ use Mix.Config
 config :ex_admin,
   repo: MyProject.Repo,
   module: MyProject,
-  modules: [],
-  module: ExAdmin
+  modules: []
+
+config :phoenix, :json_library, Poison
 
 config :phoenix, :template_engines,
   haml: PhoenixHaml.Engine,

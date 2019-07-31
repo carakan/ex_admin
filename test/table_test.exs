@@ -21,6 +21,7 @@ defmodule ExAdminTest.TableTest do
   end
 
   describe "build_th" do
+    @describetag :wip
     test "actions", %{table_opts: table_options} do
       expected = "<th class='th-actions'>Actions</th>"
       opts = {"Actions", %{fun: &index_actions/3}}

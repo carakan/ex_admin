@@ -21,7 +21,6 @@ end
 
 TestExAdmin.Repo.__adapter__().storage_down(TestExAdmin.Repo.config())
 TestExAdmin.Repo.__adapter__().storage_up(TestExAdmin.Repo.config())
-
 {:ok, _pid} = TestExAdmin.Repo.start_link()
 {:ok, _pid} = TestExAdmin.Endpoint.start_link()
 _ = Ecto.Migrator.up(TestExAdmin.Repo, 0, TestExAdmin.Migrations, log: false)

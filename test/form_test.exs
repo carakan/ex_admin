@@ -24,28 +24,6 @@ defmodule ExAdmin.FormTest do
   test "build_control DateTime" do
     res =
       ExAdmin.Form.build_control(
-        Ecto.DateTime,
-        %Simple{inserted_at: Ecto.DateTime.utc()},
-        %{},
-        "simple",
-        :inserted_at,
-        "simple_inserted_at"
-      )
-
-    select = Floki.find(res, "select[name='simple[inserted_at][year]']")
-    refute select == []
-    options = Floki.find(res, "select[name='simple[inserted_at][year]'] option")
-    refute options == []
-
-    select = Floki.find(res, "select[name='simple[inserted_at][hour]']")
-    refute select == []
-    options = Floki.find(res, "select[name='simple[inserted_at][hour]'] option")
-    refute options == []
-  end
-
-  test "build_control NativeDateTime" do
-    res =
-      ExAdmin.Form.build_control(
         DateTime,
         %Simple{inserted_at: DateTime.utc_now()},
         %{},
@@ -68,8 +46,8 @@ defmodule ExAdmin.FormTest do
   test "build_control Date" do
     res =
       ExAdmin.Form.build_control(
-        Ecto.Date,
-        %Simple{inserted_at: Ecto.DateTime.utc()},
+        Date,
+        %Simple{inserted_at: DateTime.utc_now()},
         %{},
         "simple",
         :inserted_at,
@@ -85,8 +63,8 @@ defmodule ExAdmin.FormTest do
   test "build_control Date with prompts" do
     res =
       ExAdmin.Form.build_control(
-        Ecto.Date,
-        %Simple{inserted_at: Ecto.DateTime.utc()},
+        Date,
+        %Simple{inserted_at: DateTime.utc_now()},
         %{options: [year: [prompt: "year"], month: [prompt: "month"], day: [prompt: "day"]]},
         "simple",
         :inserted_at,
@@ -115,8 +93,8 @@ defmodule ExAdmin.FormTest do
   test "build_control Time" do
     res =
       ExAdmin.Form.build_control(
-        Ecto.Time,
-        %Simple{inserted_at: Ecto.DateTime.utc()},
+        Time,
+        %Simple{inserted_at: Time.utc_now()},
         %{},
         "simple",
         :inserted_at,

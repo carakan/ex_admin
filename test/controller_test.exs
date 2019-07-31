@@ -5,9 +5,6 @@ defmodule ExAdminTest.ControllerTest do
   import TestExAdmin.TestHelpers
   alias TestExAdmin.{Noid, User, Product, Simple}
 
-  @wrong_resource_id 100_500
-  @wrong_endpoint "/admin/not_existing"
-
   setup do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(TestExAdmin.Repo)
     user = insert_user()
