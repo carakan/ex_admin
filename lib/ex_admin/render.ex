@@ -1,4 +1,3 @@
-
 defprotocol ExAdmin.Render do
   # @fallback_to_any true
   def to_string(data)
@@ -29,7 +28,7 @@ end
 
 defimpl ExAdmin.Render, for: Map do
   def to_string(map) do
-    Poison.encode!(map)
+    Jason.encode!(map)
   end
 end
 
@@ -41,10 +40,10 @@ defimpl ExAdmin.Render, for: List do
       if String.printable?(str) do
         str
       else
-        Poison.encode!(list)
+        Jason.encode!(list)
       end
     else
-      Poison.encode!(list)
+      Jason.encode!(list)
     end
   end
 end

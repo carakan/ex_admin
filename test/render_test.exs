@@ -58,15 +58,15 @@ defmodule ExAdminTest.Render do
     Application.put_env(:ex_admin, :convert_local_time, true)
   end
 
-  test "Date" do
+  test "Date1" do
     assert Render.to_string(~D[2016-10-10]) == "2016-10-10"
   end
 
-  test "Time" do
+  test "Time1" do
     assert Render.to_string(~T[15:30:00]) == "15:30:00"
   end
 
-  test "DateTime" do
+  test "DateTime1" do
     dt = DateTime.from_unix!(1_464_096_368)
     result = Render.to_string(dt)
     assert String.starts_with?(result, "2016-05-24 ")

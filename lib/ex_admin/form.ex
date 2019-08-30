@@ -1608,7 +1608,9 @@ defmodule ExAdmin.Form do
             val = Integer.to_string(x)
             {val, val}
           end)
-        _ -> value
+
+        _ ->
+          value
       end
 
     select "", [{:class, "form-control date-time"} | opts] do

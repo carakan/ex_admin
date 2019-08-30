@@ -187,8 +187,10 @@ defmodule ExAdmin.Theme.AdminLte2.Form do
         case item do
           bin when is_binary(bin) ->
             {htmls <> bin, chgs}
+
           {:safe, change} ->
             {htmls, [change | chgs]}
+
           {bin, change} ->
             {htmls <> bin, [change | chgs]}
         end
