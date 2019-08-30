@@ -39,15 +39,15 @@ defmodule ExAdmin.Mixfile do
 
   defp applications(_) do
     [
-      :gettext,
-      :phoenix,
+      :csvlixir,
       :ecto,
+      :ex_queb,
+      :gettext,
       :inflex,
+      :logger,
+      :phoenix,
       :scrivener,
       :scrivener_ecto,
-      :csvlixir,
-      :logger,
-      :ex_queb,
       :xain
     ]
   end
@@ -57,27 +57,28 @@ defmodule ExAdmin.Mixfile do
 
   defp deps do
     [
+      {:csvlixir, "~> 1.0.0"},
+      {:credo, "~> 1.1"},
       {:decimal, "~> 1.0"},
-      {:phoenix, "~> 1.4"},
-      {:phoenix_html, "~> 2.11"},
-      {:phoenix_ecto, "~> 4.0"},
+      {:earmark, "~> 1.3.2", only: :dev},
       {:ecto, "~> 3.0"},
       {:ecto_sql, "~> 3.0"},
-      {:postgrex, "> 0.0.0", only: :test},
-      {:floki, "~> 0.8", only: :test},
-      {:inflex, "~> 1.7"},
-      {:scrivener_ecto, "~> 2.2"},
-      {:xain, "== 0.6.1"},
-      {:csvlixir, "~> 1.0.0"},
-      {:exactor, "~> 2.2.0"},
       {:ex_doc, "~> 0.20.2", only: :dev},
-      {:earmark, "~> 1.3.2", only: :dev},
       {:ex_queb, git: "https://github.com/tomjschuster/ex_queb", branch: "ecto_3"},
+      {:exactor, "~> 2.2.0"},
       {:excoveralls, "~> 0.5", only: :test},
+      {:floki, "~> 0.8", only: :test},
       {:gettext, "~> 0.11"},
       {:hound, "~> 1.0", only: :test},
+      {:inflex, "~> 1.7"},
+      {:phoenix, "~> 1.4"},
+      {:phoenix_ecto, "~> 4.0"},
+      {:phoenix_html, "~> 2.11"},
+      {:plug_cowboy, "~> 2.0"},
       {:poison, "~> 3.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:postgrex, "> 0.0.0", only: :test},
+      {:scrivener_ecto, "~> 2.2"},
+      {:xain, "== 0.6.1"}
     ]
   end
 
