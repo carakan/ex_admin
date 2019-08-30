@@ -41,7 +41,6 @@ defmodule ExAdmin.Mixfile do
     [
       :gettext,
       :phoenix,
-      :ecto,
       :ecto_sql,
       :inflex,
       :scrivener,
@@ -59,31 +58,29 @@ defmodule ExAdmin.Mixfile do
 
   defp deps do
     [
-      {:decimal, "~> 1.0"},
-      {:phoenix, "~> 1.4"},
-      {:phoenix_html, "~> 2.6"},
-      {:ecto, "~> 3.0"},
-      {:ecto_sql, "~> 3.1.0"},
-      {:phoenix_ecto, "~> 4.0"},
-      {:postgrex, "~> 0.14", only: :test},
-      {:floki, "~> 0.8", only: :test},
       {:cowboy, "~> 2.5"},
-      {:plug_cowboy, "~> 2.0"},
-      {:jason, "~> 1.1"},
-      {:inflex, "~> 1.7"},
-      {:scrivener_ecto, "~> 2.0"},
-      # TODO: https://github.com/smpallen99/xain/issues/20
-      {:xain, "0.6.1"},
       {:csvlixir, "~> 1.0.0"},
-      {:exactor, "~> 2.2.0"},
-      {:ex_doc, "~> 0.16.2", only: :dev},
+      {:decimal, "~> 1.0"},
       {:earmark, "~> 1.1", only: :dev},
+      {:ecto_sql, "~> 3.1.0"},
+      {:ex_doc, "~> 0.16.2", only: :dev},
       {:ex_queb, github: "iwarshak/ex_queb"},
+      {:exactor, "~> 2.2.0"},
       {:excoveralls, "~> 0.5", only: :test},
+      {:floki, "~> 0.8", only: :test},
       {:gettext, "~> 0.11"},
+      {:hound, "~> 1.0", only: :test},
       {:html_entities, "~> 0.4"},
       {:html_sanitize_ex, github: "sublimecoder/html_sanitize_ex"},
-      {:hound, "~> 1.0", only: :test}
+      {:inflex, "~> 1.7"},
+      {:jason, "~> 1.1"},
+      {:phoenix, "~> 1.4"},
+      {:phoenix_ecto, "~> 4.0"},
+      {:phoenix_html, "~> 2.6"},
+      {:plug_cowboy, "~> 2.0"},
+      {:postgrex, "~> 0.14", only: :test},
+      {:scrivener_ecto, "~> 2.0"},
+      {:xain, "0.6.1"}
     ]
   end
 
