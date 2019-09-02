@@ -67,7 +67,7 @@ defmodule ExAdmin.Mixfile do
       {:cowboy, "~> 1.0"},
       {:inflex, "~> 1.7"},
       {:scrivener_ecto, "~> 1.1"},
-      {:xain, "~> 0.6"},
+      {:xain, github: "carakan/xain"},
       {:csvlixir, "~> 1.0.0"},
       {:exactor, "~> 2.2.0"},
       {:ex_doc, "~> 0.11", only: :dev},
