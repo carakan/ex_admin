@@ -107,7 +107,6 @@ defmodule Mix.Tasks.Admin.Install do
        ~w(ex_admin_common.js ex_admin_common.js.map))
     |> Enum.each(&copy_vendor(base_path, "js", &1))
 
-    copy_vendor_r(base_path, "fonts")
     copy_vendor_r(base_path, "images")
 
     config
@@ -118,7 +117,7 @@ defmodule Mix.Tasks.Admin.Install do
     base_path = Path.join(base)
     app_web_path = get_web_path()
 
-    Enum.each(~w(fonts css js), &File.mkdir_p(Path.join(base ++ [&1])))
+    Enum.each(~w(css js), &File.mkdir_p(Path.join(base ++ [&1])))
     File.mkdir_p(Path.join(~w{priv static images ex_admin datepicker}))
     File.mkdir_p(Path.join(["lib", app_web_path, "admin"]))
 
@@ -133,7 +132,6 @@ defmodule Mix.Tasks.Admin.Install do
        ~w(ex_admin_common.js ex_admin_common.js.map))
     |> Enum.each(&copy_file(base_path, "js", &1))
 
-    copy_r(base_path, "fonts")
     copy_r(base_path, "images")
 
     config

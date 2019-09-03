@@ -71,7 +71,6 @@ defmodule ExAdmin.Mixfile do
       {:gettext, "~> 0.11"},
       {:hound, "~> 1.0", only: :test},
       {:html_entities, "~> 0.4"},
-      {:html_sanitize_ex, github: "sublimecoder/html_sanitize_ex"},
       {:inflex, "~> 1.7"},
       {:jason, "~> 1.1"},
       {:phoenix, "~> 1.4"},
@@ -80,7 +79,7 @@ defmodule ExAdmin.Mixfile do
       {:plug_cowboy, "~> 2.0"},
       {:postgrex, "~> 0.14", only: :test},
       {:scrivener_ecto, "~> 2.0"},
-      {:xain, "0.6.1"}
+      {:xain, github: "carakan/xain"}
     ]
   end
 
