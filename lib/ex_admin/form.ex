@@ -529,6 +529,7 @@ defmodule ExAdmin.Form do
     end
   end
 
+  @deprecated "Don't use auto generated scripts"
   def put_script_block(script_block) do
     if script_block do
       Xain.script type: "text/javascript" do
@@ -537,12 +538,14 @@ defmodule ExAdmin.Form do
     end
   end
 
+  @deprecated "Don't use auto generated scripts"
   def build_scripts(list) do
     head = "$(function() {\n"
     script = for i <- list, is_tuple(i), into: head, do: build_script(i)
     script <> "});"
   end
 
+  @deprecated "Don't use auto generated scripts"
   def build_script({:change, %{id: id, script: script}}) do
     """
     $(document).on('change','##{id}', function() {
@@ -551,6 +554,7 @@ defmodule ExAdmin.Form do
     """
   end
 
+  @deprecated "Don't use auto generated scripts"
   def build_script(_other), do: ""
 
   def get_action(resource, mode) do
