@@ -12,18 +12,18 @@ defmodule ExAdmin.Theme.AdminLte2.Layout do
 
     icon =
       if path == ExAdmin.Utils.admin_path(:page, [:dashboard]) do
-        content_tag(:i, "", class: "fa fa-dashboard")
+        content_tag(:i, "", class: "nav-icon fa fa-dashboard")
       else
-        content_tag(:i, String.at(name, 0), class: "nav-label label label-info")
+        content_tag(:i, String.at(name, 0), class: "nav-icon nav-label label label-info")
       end
 
     name_span = content_tag(:span, name)
-    a_tag = content_tag(:a, [icon, name_span], href: path)
+    a_tag = content_tag(:a, [icon, name_span], href: path, class: "nav-link #{active_class}")
 
     if wrapper == :none do
       a_tag
     else
-      content_tag wrapper, id: id, class: active_class do
+      content_tag wrapper, id: id, class: "nav-item" do
         a_tag
       end
     end

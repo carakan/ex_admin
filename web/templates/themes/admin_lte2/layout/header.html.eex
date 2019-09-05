@@ -1,12 +1,11 @@
 <% import ExAdmin.Gettext %>
-<header class="main-header" id="header">
+<nav class="main-header  navbar navbar-expand navbar-white navbar-light" id="header">
   <a href="#" class="logo">
     <span class="logo-mini"><%= ExAdmin.LayoutView.logo_mini %></span>
     <!-- logo for regular state and mobile devices -->
     <span class="logo-lg"><%= ExAdmin.LayoutView.logo_full %></span>
   </a>
 
-  <nav class="navbar navbar-static-top" role="navigation">
     <!-- Sidebar toggle button-->
     <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
       <span class="sr-only">Toggle navigation</span>
@@ -39,13 +38,12 @@
       <% end %>
       <%= ExAdmin.Theme.AdminLte2.Layout.switch_user(@conn) %>
     </ul>
-  </nav>
-</header>
-<aside class="main-sidebar">
-  <section class="sidebar">
+</nav>
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <div class="sidebar">
     <!-- Sidebar Menu -->
-    <ul class="sidebar-menu">
-      <li class="header text-uppercase"><%= gettext "Resources" %></li>
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">      <li class="header text-uppercase"><%= gettext "Resources" %></li>
       <!-- Optionally, you can add icons to the links -->
       <%= if Application.get_env(:ex_admin, :nest_resources, false) do %>
         <li class="treeview active">
@@ -60,18 +58,19 @@
 
       <% actions = ExAdmin.get_title_actions(@conn) %>
       <%= if any_actions?(actions) do %>
-        <li class="header text-uppercase"><%= gettext "Actions" %></li>
+        <li class="nav-item header text-uppercase"><%= gettext "Actions" %></li>
         <%= for {action, opts} <- actions do %>
-          <li>
+          <li class="nav-item">
             <% opts = build_menu_icon(action, opts) %>
             <%= build_link(action, opts) %>
           </li>
         <% end %>
       <% end %>
       <%= if @scope_counts && Enum.count(@scope_counts) > 0 do %>
-        <li class="header text-uppercase"><%= gettext "Scopes" %></li>
+        <li class="nav-item header text-uppercase"><%= gettext "Scopes" %></li>
       <% end %>
       <%= build_scopes @conn, @scope_counts %>
     </ul><!-- /.sidebar-menu -->
-  </section>
+    </nav>
+  </div>
 </aside>

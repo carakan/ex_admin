@@ -35,7 +35,7 @@ defmodule ExAdmin.AdminLte2.LayoutView do
       _ -> "fa fa-circle-o"
     end
     if icon do
-      [{"<i class='fa #{icon}'></i><span>#{name}</span>", opts} | tail]
+      [{"<i class='nav-icon fa #{icon}'></i><span>#{name}</span>", opts} | tail]
     else
       opts_arg
     end
