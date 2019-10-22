@@ -58,11 +58,11 @@ defmodule ExAdmin.Mixfile do
 
   defp deps do
     [
-      {:cowboy, "~> 2.5"},
+      {:cowboy, "~> 2.7"},
       {:csvlixir, "~> 1.0.0"},
       {:decimal, "~> 1.0"},
       {:earmark, "~> 1.1", only: :dev},
-      {:ecto_sql, "~> 3.1.0"},
+      {:ecto_sql, "~> 3.2.0"},
       {:ex_doc, "~> 0.16.2", only: :dev},
       {:ex_queb, github: "iwarshak/ex_queb"},
       {:exactor, "~> 2.2.0"},
@@ -77,7 +77,7 @@ defmodule ExAdmin.Mixfile do
       {:phoenix_ecto, "~> 4.0"},
       {:phoenix_html, "~> 2.6"},
       {:plug_cowboy, "~> 2.0"},
-      {:postgrex, "~> 0.14", only: :test},
+      {:postgrex, "~> 0.15", only: :test},
       {:scrivener_ecto, "~> 2.0"},
       {:xain, github: "carakan/xain"}
     ]

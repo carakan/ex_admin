@@ -1,6 +1,6 @@
 {
   "repository": {},
   "dependencies": {
-    "admin-lte": "~3.0.0-rc.1"
+    "admin-lte": "~3.0.0-rc.5"
   }
 }
